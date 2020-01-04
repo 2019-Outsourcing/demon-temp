@@ -12,7 +12,7 @@ for a in range(0,24):
 basedate = '2018-10-03 00:00:00'
 basetime = time.mktime(time.strptime(basedate, '%Y-%m-%d %H:%M:%S'))
 
-with open('/home/angelo/Projects/demon/data/newdata/newData.csv','r') as datafile:
+with open('../../data/cleaned-signaling-data.csv','r') as datafile:
     csvdata = csv.reader(datafile)
 
     firstflag = True
@@ -56,7 +56,7 @@ for indexs in range(0,24):
     recordtime = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(basetime+indexs*60*60))
     finaldata[recordtime] = ahour
 
-with   open('/home/angelo/Projects/demon/data/newdata/thermal.json', 'w') as jsonfile:
+with   open('../../data/thermal-chart-data.json', 'w') as jsonfile:
     json.dump(finaldata, jsonfile)
     jsonfile.close()
 
