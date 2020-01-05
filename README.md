@@ -1,6 +1,35 @@
 # Demon | 精灵
 交通时空大叔据分析挖掘系统 | Big Data Analysis and Mining System of Traffic Space-time | BAST
 
+## 项目目录结构
+```
+├── README.md
+├── data                                        //这里放数据
+│     ├── processed-data                    //已处理的数据
+│     └── original-data                         //原始赛题数据
+│            ├── mate.docx                              //数据说明文档
+│            ├── metro-bus-data.csv               //地铁及na公交站点数据
+│            ├── signaling-data.csv                 //原始信令数据
+│            └── station-data.csv                    //基站数据
+├── web                                        //数据展示端
+│     ├── temp-site                               //临时网页
+│     │     └── ...
+│     └── ...                                            //a前后端工程文件
+├── mining                                  //数据挖掘端
+│     ├── kafka                                     //kafka相关文件
+│     │     └── ...
+│     ├── spark                                     //spark相关文件
+│     │     └── ...
+│     ├── sqoop                                    //sqoop相关文件
+│     │     └── ...
+│     └── temp-processing                 //临时处理过程文件
+│            └── ...
+├── document                            //这里放项目文件
+│     └── ...
+└── design                                  //这里放项目设计文件
+       └── ...
+```
+
 ## 目标
 以手机信令数据为对象，现有的大数据体系架构和大数据服务组织为基础。完成：
 - 交通分析
@@ -9,7 +38,6 @@
 - 驻留分析
 - 人群密度分析
 - 出行方式分析
-
 
 ### 业务猜测
 
