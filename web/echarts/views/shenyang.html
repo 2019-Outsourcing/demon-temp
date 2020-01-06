@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>沈阳人群密度热力图</title>
+    <link rel="stylesheet" href="css/base.css">
+</head>
+<body>
+    <div id="container">
+    </div>
+    <div class='nov'>
+        <a href="/shenyang">热力图</a>
+        <a href="/shenyangjz">基站</a>
+    </div>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=3.0&ak=yNbfmNfZW6zLMb6td4XXeofGoXupafds"></script>
+    <script type="text/javascript" src="js/echarts.js"></script>
+    <script type="text/javascript" src="js/bmap.js"></script>
+    <script type="text/javascript" src="js/heatmapdata1.js"></script>
+    <script>
+        var myChart = echarts.init(document.getElementById('container'));
+        // var data = [].push(dataJson["2018-10-03 00:00:00"]);
+        var hData = heatmapdata;
+        var convertData = function (data) {
+            var points = [].concat.apply([], data.map(function (track) {
+                        return track.map(function (seg) {
+                            return seg.coord.concat([1]);
+                        });
+                    }));
+           return points;
+        };
+
+    var option = {
+        baseOption: {
+            title:{
+                text:"沈阳市人群密度热力图",
+                x:'center',
+                y:'top',
+                textAlign:'center'
+            },
+            timeline: {
+                show:false,
+                autoPlay:true,
+                data: ["0:00","1:00","2:00","3:00","4:00","5:00","6:00","7:00","8:00","9:00","10:00","11:00","12:00","13:00","14:00","15:00","16:00","17:00","18:00","19:00","20:00","21:00","22:00","23:00"],
+                axisType: 'category',
+                padding: [5,5,5,5],
+                playInterval:1500,
+                lineStyle:{color:'white'},
+                label:{
+                    normal:{
+                        textStyle:{
+                            color: 'white',
+                            fontSize: 13
+                        }
+                    }
+                }
+            },
+            bmap: {
+                center: [123.403043,41.799823],
+                zoom: 11,
+                roam: true,
+                mapStyle: {}
+            },
+            visualMap: {
+                    show: false,
+                top: 'top',
+                min: 0,
+                max: 2,
+                seriesIndex: 0,
+                calculable: true,
+                inRange: {
+                     color: ['red', 'blue', 'green', 'yellow', 'red']
+                }
+            },
+            series: [{
+                type: 'heatmap',
+                coordinateSystem: 'bmap',
+                pointSize: 5,
+                blurSize: 6
+            }]
+        },
+        options: [
+            {
+                series:[{
+                    data : convertData(hData[0])
+                }]
+            },
+            {
+                series:[{
+                    data : convertData(hData[1])
+                }]
+            },
+            {
+                series:[{
+                    data : convertData(hData[2])
+                }]
+            },
+            {
+                series:[{
+                    data : convertData(hData[3])
+                }]
+            },
+            {
+                series:[{
+                    data : convertData(hData[4])
+                }]
+            },
+            {
+                series:[{
+                    data : convertData(hData[5])
+                }]
+            },
+            {
+                series:[{
+                    data : convertData(hData[6])
+                }]
+            },
+            {
+                series:[{
+                    data : convertData(hData[7])
+                }]
+            },
+            {
+                series:[{
+                    data : convertData(hData[8])
+                }]
+            },
+            {
+                series:[{
+                    data : convertData(hData[9])
+                }]
+            },
+            {
+                series:[{
+                    data: convertData(hData[10])
+                }]
+            },
+            {
+                series:[{
+                    data : convertData(hData[11])
+                }]
+            },
+            {
+                series:[{
+                    data : convertData(hData[12])
+                }]
+            },
+            {
+                series:[{
+                    data : convertData(hData[13])
+                }]
+            },
+            {
+                series:[{
+                    data : convertData(hData[14])
+                }]
+            },
+            {
+                series:[{
+                    data : convertData(hData[15])
+                }]
+            },
+            {
+                series:[{
+                    data : convertData(hData[16])
+                }]
+            },
+            {
+                series:[{
+                    data : convertData(hData[17])
+                }]
+            },
+            {
+                series:[{
+                    data : convertData(hData[18])
+                }]
+            },
+            {
+                series:[{
+                    data : convertData(hData[19])
+                }]
+            },
+            {
+                series:[{
+                    data : convertData(hData[20])
+                }]
+            },
+            {
+                series:[{
+                    data: convertData(hData[21])
+                }]
+            },
+            {
+                series:[{
+                    data : convertData(hData[22])
+                }]
+            },
+            {
+                series:[{
+                    data: convertData(hData[23])
+                }]
+            }
+        ]
+    }
+            myChart.setOption(option);
+
+            // 获取百度地图实例，使用百度地图自带的控件
+            var bmap = myChart.getModel().getComponent('bmap').getBMap();
+            bmap.addControl(new BMap.MapTypeControl());  
+    </script>
+</body>
+</html>

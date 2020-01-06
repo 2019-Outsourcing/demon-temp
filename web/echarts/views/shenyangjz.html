@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>沈阳基站散点图</title>
+    <link rel="stylesheet" href="css/base.css">
+</head>
+<body>
+    <div id="container"></div>
+    <div class='nov'>
+        <a href="/shenyang">热力图</a>
+        <a href="/shenyangjz">基站</a>
+    </div>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=3.0&ak=yNbfmNfZW6zLMb6td4XXeofGoXupafds"></script>
+    <script type="text/javascript" src="js/echarts.js"></script>
+    <script type="text/javascript" src="js/bmap.js"></script>
+    <script type="text/javascript" src="js/scatterdata.js"></script>
+    <script>
+        var myChart = echarts.init(document.getElementById('container'));
+        var data = scatterdata;
+        var option = {
+        //标题设置
+        title:{
+                text:"沈阳市站点坐标",
+                x:'center',
+                y:'top',
+                textAlign:'center'
+         },
+        tooltip : {
+            trigger: 'item'
+        },
+        //百度地图配置
+        bmap: {
+            //中心坐标，如下定义为北京
+            center: [123.432790922,41.8086447835],
+            //地图初始显示的缩放大小
+            zoom: 16,
+            roam: true,
+            //地图上的一些特征属性设置
+            mapStyle: {
+             
+            }
+        },
+        //散点数据的配置
+        series : [{
+            name: '基站',
+            type: 'effectScatter',
+            coordinateSystem: 'bmap',
+            //数据载入，这里需要自己定义自己的数据，主要是[{name : ***, value : ***}]
+            data: data,
+            symbolSize: 8,
+            //配置标签的显示
+            label: {
+                normal: {
+                    formatter: '{b}',
+                    position: 'right',
+                    show: false
+                },
+                emphasis: {
+                    show: true
+                }
+            },
+            //配置散点的颜色
+            itemStyle: {
+                normal: {
+                    shadowBlur: 2,
+                    shadowColor: '#f4e925',
+                    color: '#f4e925'
+                }
+            }
+        }]
+    };
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+    </script>
+</body>
+</html>
