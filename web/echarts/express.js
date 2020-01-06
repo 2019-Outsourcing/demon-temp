@@ -5,7 +5,7 @@ var expressO = require('express');
 var express = require('express')(); //express构建的实例对象
 
 express.get('/', function (request, response) { // 路由
-  response.send("hello world!") // 传送HTTP响应
+  response.render('shenyang')
 })
 express.listen(8080) //监听3000端口，默认localhost: 127.0.0.1 || 0.0.0.0
 
