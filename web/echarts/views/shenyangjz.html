@@ -9,9 +9,33 @@
 </head>
 <body>
     <div id="container"></div>
-    <div class='nov'>
-        <a href="/shenyang">热力图</a>
-        <a href="/shenyangjz">基站</a>
+    <div id="lift">
+        <ul>
+            <li class="item">
+                <a href="/shenyang">人群密度</a>
+            </li >
+            <li class="item">
+                <a href="/shenyangjz">站点</a>
+            </li>
+            <li class="item">
+                <a href="">驻留方式</a>
+            </li>
+            <li class="item">
+                <a href="">出行路线</a>
+            </li>
+            <li class="item">
+                <a href="">出行方式</a>
+            </li>
+            <li class="item">
+                <a href="">拥挤程度</a>
+            </li>
+            <li class="item">
+                <a href="">高峰时段</a>
+            </li>
+            <li class="item">
+                <a href="">异常聚集</a>
+            </li>
+        </ul>
     </div>
     <script type="text/javascript" src="http://api.map.baidu.com/api?v=3.0&ak=yNbfmNfZW6zLMb6td4XXeofGoXupafds"></script>
     <script type="text/javascript" src="js/echarts.js"></script>
@@ -74,6 +98,9 @@
     };
     // 使用刚指定的配置项和数据显示图表。
     myChart.setOption(option);
+    // 获取百度地图实例，使用百度地图自带的控件
+    var bmap = myChart.getModel().getComponent('bmap').getBMap();
+    bmap.addControl(new BMap.MapTypeControl());  
     </script>
 </body>
 </html>

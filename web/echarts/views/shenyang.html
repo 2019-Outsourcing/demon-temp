@@ -10,9 +10,33 @@
 <body>
     <div id="container">
     </div>
-    <div class='nov'>
-        <a href="/shenyang">热力图</a>
-        <a href="/shenyangjz">基站</a>
+    <div id="lift">
+        <ul>
+            <li class="item">
+                <a href="/shenyang">人群密度</a>
+            </li>
+            <li class="item">
+                <a href="/shenyangjz">站点</a>
+            </li>
+            <li class="item">
+                <a href="">驻留方式</a>
+            </li>
+            <li class="item">
+                <a href="">出行路线</a>
+            </li>
+            <li class="item">
+                <a href="">出行方式</a>
+            </li>
+            <li class="item">
+                <a href="">拥挤程度</a>
+            </li>
+            <li class="item">
+                <a href="">高峰时段</a>
+            </li>
+            <li class="item">
+                <a href="">异常聚集</a>
+            </li>
+        </ul>
     </div>
     <script type="text/javascript" src="http://api.map.baidu.com/api?v=3.0&ak=yNbfmNfZW6zLMb6td4XXeofGoXupafds"></script>
     <script type="text/javascript" src="js/echarts.js"></script>
@@ -63,7 +87,7 @@
                 mapStyle: {}
             },
             visualMap: {
-                    show: false,
+                show: false,
                 top: 'top',
                 min: 0,
                 max: 2,
