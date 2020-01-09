@@ -64,7 +64,136 @@
             roam: true,
             //地图上的一些特征属性设置
             mapStyle: {
-             
+                    styleJson: [
+                    {
+                        "featureType": "water",
+                        "elementType": "all",
+                        "stylers": {
+                            "color": "#044161"
+                        }
+                    },
+                    {
+                        "featureType": "land",
+                        "elementType": "all",
+                        "stylers": {
+                            "color": "#004981"
+                        }
+                    },
+                    {
+                        "featureType": "boundary",
+                        "elementType": "geometry",
+                        "stylers": {
+                            "color": "#064f85"
+                        }
+                    },
+                    {
+                        "featureType": "railway",
+                        "elementType": "all",
+                        "stylers": {
+                            "visibility": "off"
+                        }
+                    },
+                    {
+                        "featureType": "highway",
+                        "elementType": "geometry",
+                        "stylers": {
+                            "color": "#004981"
+                        }
+                    },
+                    {
+                        "featureType": "highway",
+                        "elementType": "geometry.fill",
+                        "stylers": {
+                            "color": "#005b96",
+                            "lightness": 1
+                        }
+                    },
+                    {
+                        "featureType": "highway",
+                        "elementType": "labels",
+                        "stylers": {
+                            "visibility": "off"
+                        }
+                    },
+                    {
+                        "featureType": "arterial",
+                        "elementType": "geometry",
+                        "stylers": {
+                            "color": "#004981"
+                        }
+                    },
+                    {
+                        "featureType": "arterial",
+                        "elementType": "geometry.fill",
+                        "stylers": {
+                            "color": "#00508b"
+                        }
+                    },
+                    {
+                        "featureType": "poi",
+                        "elementType": "all",
+                        "stylers": {
+                            "visibility": "off"
+                        }
+                    },
+                    {
+                        "featureType": "green",
+                        "elementType": "all",
+                        "stylers": {
+                            "color": "#056197",
+                            "visibility": "off"
+                        }
+                    },
+                    {
+                        "featureType": "subway",
+                        "elementType": "all",
+                        "stylers": {
+                            "visibility": "off"
+                        }
+                    },
+                    {
+                        "featureType": "manmade",
+                        "elementType": "all",
+                        "stylers": {
+                            "visibility": "off"
+                        }
+                    },
+                    {
+                        "featureType": "local",
+                        "elementType": "all",
+                        "stylers": {
+                            "visibility": "off"
+                        }
+                    },
+                    {
+                        "featureType": "arterial",
+                        "elementType": "labels",
+                        "stylers": {
+                            "visibility": "off"
+                        }
+                    },
+                    {
+                        "featureType": "boundary",
+                        "elementType": "geometry.fill",
+                        "stylers": {
+                            "color": "#029fd4"
+                        }
+                    },
+                    {
+                        "featureType": "building",
+                        "elementType": "all",
+                        "stylers": {
+                            "color": "#1a5787"
+                        }
+                    },
+                    {
+                        "featureType": "label",
+                        "elementType": "all",
+                        "stylers": {
+                            "visibility": "off"
+                        }
+                    }
+            ]
             }
         },
         //散点数据的配置
@@ -74,6 +203,7 @@
             coordinateSystem: 'bmap',
             //数据载入，这里需要自己定义自己的数据，主要是[{name : ***, value : ***}]
             data: data,
+            symbol:'image://images/jz.png',
             symbolSize: 8,
             //配置标签的显示
             label: {
